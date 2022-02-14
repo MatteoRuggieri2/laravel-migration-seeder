@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Travels;
+use App\Travel;
 use Faker\Generator as Faker;
 
 class TravelsTableSeeder extends Seeder
@@ -19,7 +19,7 @@ class TravelsTableSeeder extends Seeder
             $new_travel->destination = $faker->city();
             $new_travel->departure = $faker->date('Y_m_d');
             $new_travel->hotel = rand(0, 1);
-            $new_travel->vehicle = $faker->randomElements(['Pullman', 'Treno', 'Nave', 'Traghetto', 'Aereo']);
+            $new_travel->vehicle = $faker->randomElement(['Pullman', 'Treno', 'Nave', 'Traghetto', 'Aereo']);
             $new_travel->price = rand(500, 10000);
             $new_travel->save();
 
